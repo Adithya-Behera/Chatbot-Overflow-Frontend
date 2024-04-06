@@ -19,7 +19,6 @@ const Navbar = () => {
         navigate('/')
         dispatch(setCurrentUser(null))
     }
-    
     useEffect(() => {
         const token = User?.token 
         if(token){
@@ -29,7 +28,8 @@ const Navbar = () => {
             }
         }
         dispatch(setCurrentUser( JSON.parse(localStorage.getItem('Profile'))))
-    },[User?.token,dispatch])
+        // eslint-disable-next-line
+    },[User?.token,dispatch]);
     
     return (
         <nav className='main-nav'>
